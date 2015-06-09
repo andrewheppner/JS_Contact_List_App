@@ -13,6 +13,7 @@ gem 'tux'
 
 group :development, :test do
   gem 'byebug'
+  gem 'faker'
   gem 'pry'
   gem 'shotgun'
   gem 'sqlite3'

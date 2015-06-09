@@ -1,0 +1,11 @@
+.delete {
+  color: red;
+  font-size: 10px;
+  padding-left: 20px;
+}
+
+.edit {
+  color: blue;
+  font-size: 10px;
+  padding-left: 20px;
+}
