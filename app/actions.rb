@@ -11,17 +11,17 @@ end
 
 post '/contacts' do 
   content_type :json
-  @contact = Contact.new(
+  contact = Contact.new(
     first_name: params[:first_name],
     last_name: params[:last_name],
     email: params[:email],
     phone_number: params[:phone_number])
-  if @contact.save
+  if contact.save
     status 200
-    @contact.to_json
+    contact.to_json
   else
     status 400
-    @contact.errors.full_messages
+    contact.errors.full_messages
   end
 end
 
