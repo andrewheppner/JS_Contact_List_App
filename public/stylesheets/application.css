@@ -7,8 +7,8 @@ body {
 }
 
 .delete {
-  color: red;
-  font-size: 10px;
+  color: #338585;
+  font-size: 18px;
   padding-left: 20px;
 }
 
@@ -31,8 +31,12 @@ body {
 
 .details {
   float: left;
-  font-size: 30px;
-  color: white;
+  font-size: 60px;
+  /*color: white;*/
+  background: url(http://ep.yimg.com/ty/cdn/yhst-96745417742161/cheetah-brown.jpg) no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  }
 }
 
 h1 {
