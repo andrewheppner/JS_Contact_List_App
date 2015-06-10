@@ -1,10 +1,42 @@
+html {
+  background: #B26B6B;
+}
+
+body {
+  margin:15px;
+}
+
 .delete {
   color: red;
   font-size: 10px;
   padding-left: 20px;
 }
 
+.add-contact{
+  margin-bottom: 20px;
+}
+
 .add-new {
   color: orange;
+}
+
+.hover {
+  color: #75A3A3;
+}
+
+.container {
+  width: 350px;
+  float: left;
+}
+
+.details {
+  float: left;
+  font-size: 30px;
+  color: white;
+}
+
+h1 {
+  font-size: 40px;
+  color: #EBEBE0;
 }
 

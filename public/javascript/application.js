@@ -32,11 +32,26 @@ $(document).ready(function() {
  
   var showContactInDetailView = function(id){
     var contact = contacts[id]
-    $('.details').append('<p>' + contact.first_name + "   " + contact.last_name + "   " + 
-        contact.email + "   " + contact.phone_number + '</p>' + "  " + '<span data-id='+contact.id+' class="delete">Delete</span>');
+    $('.details').append('<p>' + contact.first_name + "   " + contact.last_name + '<br>' + "   " + 
+        contact.email + '<br>' + "   " + contact.phone_number +  '<br>' + "  " + '<p data-id='+contact.id+' class="delete">Delete</p>');
   };
 
+  var contactForm = "<form class='add-contact'>\
+        <input name='first_name' placeholder='First Name'/>\
+        <input name ='last_name' placeholder='Last Name'/>\
+        <input name='email' placeholder='Email'/>\
+        <input name='phone_number' placeholder='Phone no.'/>\
+        <button type='submit' class='submit'>Create</button></form>"
 
+//Listens for mouseenter on contacts and highlights
+  $('body').on('mouseenter', '.contact > span', function(){
+    $(this).addClass('hover');
+  });
+
+  //Listens for mouseleave on contacts and highlights
+  $('body').on('mouseleave', '.contact > span', function(){
+    $(this).removeClass('hover');
+  });
 
 //Listens for click on the contact in order to display details
   $('.container').on('click','.contact', function(){
@@ -73,5 +88,16 @@ $(document).ready(function() {
       data: contactInfo});
     $('form.add-contact').remove();
   });
+
+//Listens for search queries, and will filter the contacts displaying on the page.
+  $('#searchbox').keyup(function(){
+    $('.details').empty();
+    var valThis = $(this).val();
+    $('.contact > span').each(function(){
+      var text = $(this).text();
+      (text.indexOf(valThis) >= 0) ? $(this).show() : $(this).hide();         
+    });
+  });
+
 
 });
